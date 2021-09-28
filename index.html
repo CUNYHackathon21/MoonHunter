@@ -54,15 +54,15 @@
   <div class="row">
     <div class="col">
         <div class="input-group mb-3 animate__animated animate__fadeInDown" style="color: black;">
-            <input type="text" class="form-control animate__animated animate__fadeInDown" placeholder="Building height" aria-label="Building height" aria-describedby="button-addon2" id="building_height"> <!--USER INPUT-->
+            <input id="building_height" type="number" class="form-control animate__animated animate__fadeInDown" placeholder="Building height" aria-label="Building height" aria-describedby="button-addon2" > <!--USER INPUT-->
             <button class="btn btn-outline-secondary animate__animated animate__fadeInDown" type="button" id="submit" style="color: white;" onclick="work()">ENTER</button>
           </div>
     </div>
     <div class="col">
-        <input class="form-control animate__animated animate__fadeInDown" type="text" value="0" aria-label="readonly input example" readonly id="distance"><!--DISPLAY DISTANCE-->
+        <input id="distance"  class="form-control animate__animated animate__fadeInDown" type="number"  aria-label="readonly input example" readonly ><!--DISPLAY DISTANCE-->
     </div>
     <div class="col-2 animate__animated animate__fadeInDown">
-      10:29:21
+      <h1 id="time">00:00:00</h1>
     </div>
   </div>
   <br>
