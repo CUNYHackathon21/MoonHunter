@@ -1,3 +1,4 @@
+let eventHandler = MyEventHandler();
 
 // Google maps script.
 let map;
@@ -5,12 +6,14 @@ let map;
 function initMap() {
   map = new google.maps.Map(document.getElementById("map"), {
     center: { lat: -34.397, lng: 150.644 },
-    zoom: 8,
+    zoom: 11,
   });
+  
+  setup();
 
   // Make the map center your current location.
   if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(setMapCenter);
+    navigator.geolocation.getCurrentPosition(setMapCenter);
   }
 }
 
@@ -18,6 +21,8 @@ function setMapCenter(position) {
   let coords = position.coords;
   map.setCenter(new google.maps.LatLng(coords.latitude,
     coords.longitude));
+
+  eventHandler.trigger("markerupdate");
 }
 
 // TypeIt script.
