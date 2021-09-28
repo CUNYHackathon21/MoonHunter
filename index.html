@@ -32,7 +32,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
       </div>
 <!--BACKGROUND END-->
 
-
+<!--LOGO AND ICONS-->
     <div class="container pt-5">
         <div class="grid">
             <div class="g-col-6 logo animate__animated animate__fadeInDown"><H1>MOON HUNTER  </H1><a href="https://github.com/CUNYHackathon21/MoonHunter"><i class="gg-code icons_main2 animate__fadeInDown" ></i></a> <i class="gg-moon icons_main animate__fadeInDown"></i></div>
@@ -40,8 +40,13 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
             <div style="height: 130px; ">
             <p class="simpleUsage" style="color: white; font-size: x-large; margin-top: 4vh; text-align: center;"></p>
             </div>
-            <div id="map"  class="animate__animated animate__fadeInUp animate__delay-2s" style="width:100%;height:400px; margin-top: 5vh; border-radius: 15px; box-shadow: 0px 0px 30px 0px rgba(255, 255, 255, 0.404);">wdwdd</div>
+<!--LOGO AND ICONS DONE-->
 
+<!--MAP-->
+            <div id="map"  class="animate__animated animate__fadeInUp animate__delay-2s" style="width:100%;height:400px; margin-top: 5vh; border-radius: 15px; box-shadow: 0px 0px 30px 0px rgba(255, 255, 255, 0.404);">wdwdd</div>
+<!--FINISH MAP-->
+
+<!--INPUTS-->
            <div class="row" style="text-align: center; padding-top: 3vh; color: white; font-size: x-large;">
     <div class="col-lg">
       MOON SET TIME IS 13:00
@@ -50,17 +55,18 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
   <div class="row" style="text-align: center; color: white; font-size: x-large; padding-top: 3vh;">
     <div class="col">
         <div class="input-group mb-3" style="color: black;">
-            <input type="text" class="form-control" placeholder="Building height" aria-label="Building height" aria-describedby="button-addon2" >
-            <button class="btn btn-outline-secondary" type="button" id="button-addon2" style="color: white;">ENTER</button>
+            <input type="text" class="form-control" placeholder="Building height" aria-label="Building height" aria-describedby="button-addon2" id="building_height"> <!--USER INPUT-->
+            <button class="btn btn-outline-secondary" type="button" id="submit" style="color: white;">ENTER</button>
           </div>
     </div>
     <div class="col">
-        <input class="form-control" type="text" value="Distance from you and your target" aria-label="readonly input example" readonly>
+        <input class="form-control" type="text" value="0" aria-label="readonly input example" readonly><!--DISPLAY DISTANCE-->
     </div>
     <div class="col">
       10:29:21
     </div>
   </div>
+  <!--INPUTS END-->
     </div>
 <script>
     let map;
