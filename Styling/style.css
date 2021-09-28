@@ -4,8 +4,31 @@
 html,
 body {
   height: 100%;
+  font-family: 'Luckiest Guy', cursive;
+  font-family: 'Raleway', sans-serif;
+  font-family: 'Russo One', sans-serif;
+}
+#map {
+  height: 100%;
+}
+.icons_main{
+  margin-top: -35px;
+  float: right;
+  margin-right: 20px;
+  color: #fff;
 }
 
+.icons_main2{
+  margin-top: -35px;
+  float: right;
+  margin-right: 7vh;
+  color: #fff;
+}
+.logo{
+  position: relative;
+  z-index: 2;
+  color: #fff;
+}
 body {
   display: flex;
   justify-content: center;
@@ -23,11 +46,11 @@ body {
 }
 
 .page-bg {
-  background: #a7a7a7;
+  background: #000000;
   background-blend-mode: screen;
   background-size: cover;
   filter: grayscale(100%);
-  z-index: -1;
+  z-index: -2;
 }
 
 .particle,

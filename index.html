@@ -7,12 +7,22 @@
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Raleway&family=Russo+One&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="Styling/style.css">
+<link href='https://css.gg/css' rel='stylesheet'>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5Z3vZrOXcDUdUeltHAH7NgHaiq_73_Q0&callback=initMap&v=weekly"defer></script>  
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default" defer></script>
+
 </head>
 <body>
+
+    <!--BACKGROUND-->
     <div class="page-bg"></div>
     <div class="animation-wrapper">
         <div class="particle particle-1"></div>
@@ -20,13 +30,60 @@
         <div class="particle particle-3"></div>
         <div class="particle particle-4"></div>
       </div>
-    <div class="container" style="padding-top: 10vh;">
-        <div class="grid text-center mt-10">
-            <div class="g-col-6 "><H1>MOON HUNTER</H1></div>
-        </div>
+<!--BACKGROUND END-->
 
+
+    <div class="container pt-5">
+        <div class="grid">
+            <div class="g-col-6 logo animate__animated animate__fadeInDown"><H1>MOON HUNTER  </H1><a href="https://github.com/CUNYHackathon21/MoonHunter"><i class="gg-code icons_main2 animate__fadeInDown" ></i></a> <i class="gg-moon icons_main animate__fadeInDown"></i></div>
+            <hr class="animate__animated animate__fadeInDown" style="color: white;">
+            <p class="simpleUsage" style="color: white; font-size: x-large; margin-top: 4vh; text-align: center;"></p>
+            
+            <div id="map"  class="animate__animated animate__fadeInUp animate__delay-2s" style="width:100%;height:400px; margin-top: 5vh; border-radius: 15px; box-shadow: 0px 0px 30px 0px rgba(255, 255, 255, 0.404);">wdwdd</div>
+
+           <div class="row" style="text-align: center; padding-top: 3vh; color: white; font-size: x-large;">
+    <div class="col-lg">
+      MOON SET TIME IS 13:00
     </div>
+  </div>
+  <div class="row" style="text-align: center; color: white; font-size: x-large; padding-top: 3vh;">
+    <div class="col">
+        <div class="input-group mb-3" style="color: black;">
+            <input type="text" class="form-control" placeholder="Building height" aria-label="Building height" aria-describedby="button-addon2" >
+            <button class="btn btn-outline-secondary" type="button" id="button-addon2" style="color: white;">ENTER</button>
+          </div>
+    </div>
+    <div class="col">
+        <input class="form-control" type="text" value="Distance from you and your target" aria-label="readonly input example" readonly>
+    </div>
+    <div class="col">
+      10:29:21
+    </div>
+  </div>
+    </div>
+<script>
+    let map;
+
+function initMap() {
+  map = new google.maps.Map(document.getElementById("map"), {
+    center: { lat: -34.397, lng: 150.644 },
+    zoom: 8,
+  });
+}
+</script>
+ 
 </body>
+<script src="https://unpkg.com/typeit@8.0.2/dist/index.umd.js"></script>
+<script>
+    new TypeIt(".simpleUsage", {
+strings: "Welcome to Moon Hunter!, this web app will help photographers to plan their shot to take a perfect picture of the moon aliening with a building or any high object. All what you need to do is choose your points on the map then the app will calculate everything for you to take your shot.",
+speed: 50,
+waitUntilVisible: true,
+}).go();
+</script>
+
+
+
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
 </html>
