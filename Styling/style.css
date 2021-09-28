@@ -5,45 +5,48 @@ body {
   font-family: 'Raleway', sans-serif;
   font-family: 'Russo One', sans-serif;
 }
+
 #map {
   height: 100%;
 }
-.icons_main{
+
+.icons_main {
   margin-top: -35px;
   float: right;
   margin-right: 20px;
   color: #fff;
 }
 
-.icons_main2{
+.icons_main2 {
   margin-top: -35px;
   float: right;
   margin-right: 7vh;
   color: #fff;
 }
-.logo{
+
+.logo {
   position: relative;
   z-index: 2;
   color: #fff;
 }
 
-.simpleUsage{
+.simpleUsage {
   color: white; 
   font-size: x-large; 
   margin-top: 4vh; 
   text-align: center;
 }
 
-p{
+p {
   color: #fff;
   font-size: large;
 }
 
-hr{
+hr {
   color:#fff;
 }
 
-.row{
+.row {
   text-align: center; 
   padding-top: 3vh; 
   color: white; 
