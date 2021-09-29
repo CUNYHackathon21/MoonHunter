@@ -2,13 +2,29 @@ let markers = [];
 
 let distance = 0;
 
+
+function getTime(){
+
+  let actualTime = new Date();
+  let hour = actualTime.getHours();
+  let minutes = actualTime.getMinutes();
+  let seconds = actualTime.getSeconds();
+  let fullTime= hour+ " : " + minutes + " : " + seconds ;
+
+document.getElementById("time").innerHTML = fullTime;
+}
+
+
 function work() {
+
   // Implement logic here.
+   getTime();
+   moonSetTime();
+
   let x = parseInt(document.getElementById("building_height").value);
 
   document.getElementById("distance").value = distance;
 
-  document.getElementById("time").innerHTML = "01:00:00";
 }
 
 function setup() {
@@ -91,3 +107,63 @@ function setDistance() {
 
   console.log(distance);
 }
+
+
+function result() {
+  let angle1 = 90.0;
+  let b = parseInt(document.getElementById("hight").value); //Adjacent
+  let c = parseInt(document.getElementById("distance").value); //Opposite
+  //finding the Hypotenuse using Pythagorean theorem
+
+  let a = Math.sqrt(Math.pow(b, 2) + Math.pow(c, 2));
+
+  console.log(a);
+
+  //finding the the missing angle using  The Law of Cosines (arcCosine)
+  // (Math.pow(a, 2) + Math.pow(c, 2) - Math.pow(b, 2)); Numerator
+  // (2 * a * b); Denominator
+
+  let missingAngle = Math.acos(
+    (Math.pow(a, 2) + Math.pow(c, 2) - Math.pow(b, 2)) / (2 * a * c)
+  );
+
+  console.log(missingAngle); //In RAD I have to Change it to DEGREES
+
+  let degree = missingAngle * (180 / Math.PI);
+  console.log(degree.toFixed(2) + " degree"); //Convert a number into a string, rounding the number to keep only two decimals
+
+  let result = (document.getElementById("result").innerHTML =
+    degree.toFixed(2) + " Degree");
+}
+
+  function moonSetTime(){
+
+      let API_KEY = "67458e9d671e48678bb2b16c74b5d85c";
+      const URL = "https://api.ipgeolocation.io/astronomy";
+    
+      const Full_URL = `${URL}?apiKey=${API_KEY}&lat=40.7128&long=-73.935242`;
+    
+      const moonPromise = fetch(Full_URL);
+    
+      return moonPromise.then((response) => {
+        return response.json();
+      });
+    };
+    
+    //console.log(getMoonData());
+
+    getMoonData()
+      .then((resDa) => {
+        console.log(resDa.moonset);
+        let time = resDa.moonset;
+        document.getElementById("moonTime").value= resDa.moonset;
+        let minInt = console.log(parseInt(time.slice(3, 5)) - 30);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
+    // document.getElementById("moonTime").value=6;
+   // document.getElementById("moonTime").value= resDa.moonset;
+   
+   }
