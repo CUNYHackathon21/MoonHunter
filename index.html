@@ -17,6 +17,7 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD31qK5YRdWZLZbpA1kW5RO8ysoXjlyCaE&callback=initMap&libraries=geometry&v=weekly"defer></script>  
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default" defer></script>
     <link rel="stylesheet" href="./Styling/background.css">
+    <link rel="stylesheet" href="./Styling/moonPhases.css">
 </head>
 
 <body>
@@ -67,18 +68,23 @@
   </div>
   <p class="animate__animated animate__fadeInDown" style="text-align: center; margin-top: 2%;">Perfect aligning angle is </p>
   <div class="col-4">
-    <input id="angle"  class="form-control animate__animated animate__fadeInDown" value="moon time"   aria-label="readonly input example" style="margin-left: 100%;"readonly ></input><!--DISPLAY DISTANCE-->
+    <input id="angle"  class="form-control animate__animated animate__fadeInDown" value="Perfect angle"   aria-label="readonly input example" style="margin-left: 100%;"readonly ></input><!--DISPLAY DISTANCE-->
 </div>
   <br>
   <!--INPUTS END-->
+  <!--Moons Calender-->
+  <div id="ex3"></div>
   <hr class="animate__animated animate__fadeInDown">
         <p class="animate__animated animate__fadeInDown">© MOON HUNTER 2021-2022</p><a href="https://github.com/CUNYHackathon21/MoonHunter"><i class="gg-code icons_main2 animate__animated animate__fadeInDown" ></i></a> <i class="gg-moon icons_main"></i>
     </div>
+
+    
 </body>
 <script src="https://unpkg.com/typeit@8.0.2/dist/index.umd.js"></script>
 <script src="./js/eventhandler.js"></script>
 <script src="./js/index.js"></script>
 <script src="./js/home.js"></script>
+<script src="./js/moonPhases.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha256-zMDueDFY0as65ZDvjJgqgn446Lgv0SFVHN1MIAQfzRs=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
 </html>
