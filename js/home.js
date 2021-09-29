@@ -3,19 +3,19 @@ let markers = [];
 let distance = 0;
 
 function getTime() {
-  let actualTime = new Date();
-  let hour = actualTime.getHours();
-  let minutes = actualTime.getMinutes();
-  let seconds = actualTime.getSeconds();
-  let fullTime = hour + " : " + minutes + " : " + seconds;
+  let date = new Date();
+  let hour = date.getHours();
+  let minutes = date.getMinutes();
+  let seconds = date.getSeconds();
+  let finalTime = hour + " : " + minutes + " : " + seconds;
 
-  document.getElementById("time").innerHTML = fullTime;
+  document.getElementById("time").innerHTML = "Time: " + finalTime;
 }
 
 function work() {
   // Implement logic here.
   getTime();
-  //moonSetTime();
+  
   moonSetTime()
     .then((resDa) => {
       document.getElementById("moonTime").innerHTML =
@@ -28,6 +28,7 @@ function work() {
   parseInt(document.getElementById("building_height").value);
 
   result();
+
   document.getElementById("distance").value = distance;
 }
 
@@ -112,35 +113,28 @@ function setDistance() {
 }
 
 function result() {
-  let angle1 = 90.0;
-  let b = parseInt(document.getElementById("building_height").value); //Adjacent
-  //let c = parseInt(document.getElementById("distance").value); //Opposite
-  let c = distance;
-  //finding the Hypotenuse using Pythagorean theorem
+  // distance is the opposite angle
+  let height = parseInt(document.getElementById("building_height").value); // Adjacent angle
+  
+  // We find the hypotenuse using the pythagorean theorem
 
-  let a = Math.sqrt(Math.pow(b, 2) + Math.pow(c, 2));
+  let a = Math.sqrt(Math.pow(height, 2) + Math.pow(distance, 2));
 
-  console.log(a);
-
-  //finding the the missing angle using  The Law of Cosines (arcCosine)
+  // finding the the missing angle using "Law of Cosines" (arcCosine)
   // (Math.pow(a, 2) + Math.pow(c, 2) - Math.pow(b, 2)); Numerator
   // (2 * a * b); Denominator
 
   let missingAngle = Math.acos(
-    (Math.pow(a, 2) + Math.pow(c, 2) - Math.pow(b, 2)) / (2 * a * c)
+    (Math.pow(a, 2) + Math.pow(distance, 2) - Math.pow(height, 2)) / (2 * a * distance)
   );
 
-  console.log(missingAngle); //In RAD I have to Change it to DEGREES
-
   let degree = missingAngle * (180 / Math.PI);
-  console.log(degree.toFixed(2) + " degree"); //Convert a number into a string, rounding the number to keep only two decimals
 
-  let result = (document.getElementById("angle").value =
-    degree.toFixed(2) + " Degree");
+  document.getElementById("angle").value = degree.toFixed(2) + " Degree";
 }
 
 function moonSetTime() {
-  let API_KEY = "67458e9d671e48678bb2b16c74b5d85c";
+  const API_KEY = "67458e9d671e48678bb2b16c74b5d85c";
   const URL = "https://api.ipgeolocation.io/astronomy";
 
   const Full_URL = `${URL}?apiKey=${API_KEY}&lat=40.7128&long=-73.935242`;
