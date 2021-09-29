@@ -1,3 +1,3 @@
-# MoonHunter
+# MOON HUNTER 🌙
 
-Calculate the time when the moon will be perfectly aligned for your picture.
+Mon hunter is a web app that calculate the time when the moon will be perfectly aligned for your picture.
